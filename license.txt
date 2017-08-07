@@ -1,2 +1,3 @@
 I establish a file named license followed the instruments by Xuefeng Liao.
 I change the text file in new branch.
+Creating a new branch is quick AND simple.
