@@ -29,7 +29,7 @@
 "git reset --hard HEAD^"                       
 "git reset --hard HEAD^^"                      
 "git reset --hard HEAD~100"                    	
-"git relog"                   #search the version number;
+"git reflog"                  #search the version number;
 "git seset --hard xxxxxxx"                     
 "cat <file.file type>"                         
 
