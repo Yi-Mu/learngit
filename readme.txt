@@ -11,3 +11,5 @@ Bug strategy.
 This is the first time for me to opperate it independedly.
 
 Have a try on cooperating with github.
+
+AND now I understand.
