@@ -1,0 +1,108 @@
+1. Installatin and configuration
+  1.1 Install in Windows: 
+      a.download from https://git-for-windows.github.io or https://pan.baidu.com/s/1kU5OCOB#list/path=%2Fpub%2Fgit and default installation;
+      b.open "Git bash" and enter 'git config --global user.name "Your name"', 'git config --global user.email "xxx@xxx"';
+  1.2 Cooperate with GitHub
+      a.register an account in GitHub;
+	  b.creat 'SSH key':
+	         "ssh-keygen -t rsa -C 'xxx@xxx'";             #and then "Ente" all the way;
+			                                               #"C:/Users/<username>/.ssh" consist of "id_rsa"(private) and "id_rsa.pub";
+														   #log in GitHub,"Add SSH key",fill in any words in "Title" and copy the content of "id_rsa.pub" in "Key";
+														   #You can add many keys to GitHub such as destributing one to office computer and the other to PC;
+	  c."Folk": "Folk" can clone a remote repository from other ro your account,you can clone your own remote repository to local,and fix it and push it; "Pull request" means to the original repository;
+2. Local repository and remote repository
+   2.1 Creat a local repository and send the informations to GitHub
+      a.creat an empty directory(without Chinease characters):
+	        "cd d:/"                                       #look for D drive;
+			"mkdir <file_name,like learngit>"              #creat an empty file named learngit in D drive;
+			"cd learngit"                                  #enter the file learngit;
+			"pwd"                                          #show the current directory;
+	  b.initilize the new repository
+	        "git init"                                     #enter the code in the 'git bash',and edit the txts with Notepad++('UTF without BOM'mode) and put it in current repository and you can manage it with Git;
+			"git add <file.file type>                      #add the file to the stage;
+			"git commit -m'xxx'"                           #commit it to the 'master' branch;
+			"ls -ah"                                       #show all the files in current directory including hidden ones;
+	  c.connect a remote repository
+	        "git remote add <remote_name> git@github.com:<GitHub_name>/<remote repository_name>.git";
+			        such as "git remote origin git@github.com:Yi-Mu/learngit.git";
+			"git push -u origin master"                    #push messages from local main branch "master" to remote "origin" in the first time(there're may be warnings,normal);
+			"git push origin master"                       #when reversing the files in local repository,push the newest version to remote;
+			"git remote rm origin"                         #delete the connections between local and remote "origin";
+   2.2 Creat a remote repository and clone it to local computer
+      a.do it in the GitHub, do remember to check the option'Initialize this repository with a README';
+	  b.clone
+	        "git clone git@github.com:Yi-Mu/gitskills.git" #We always use the SSH address rather than HTTPS address cause the formal is faster;
+3. Configuration
+   3.1 Git with colorful words
+            "git config --global color.ui true"
+   3.2 make command with nickname(We recommend it)
+            "git config --global alias.st status"          #'git status' can be wrote by 'git st';
+			"git config --global alias.ci commit"          #'git commit -m"xxx"' can be wrote by 'git ci -m"xxx"';
+			"cat .git/config"                              #check the git configuration file in every repository(without global parameter);delete the corresponding lines in [alias] can reset it;
+			"cat .gitconfig"                               #check the git configuration file in current user's condition(with global),remember in the C:/Users/<username>;delete the corresponding lines in [alias] can reset it;
+   3.3 ignore special files
+            "git add .gitignore"                           #first establish a '.gitignore' file consist of types wish to ignore;
+			"git commit -m'xxx'"                           #then add and commit it to the 'master';
+			"git check-ignore -v <file.file type>"         #if the file cannot be added into the 'master',check if it was ignored;
+			"git add -f <file.file type>"                  #Fored to add to the 'master';
+4. Guide to use
+   4.1 common opperation
+            "git status"                                   
+			"git diff"                                     #tell you content you have just modified;
+			"git log --graph --pretty=oneline --abbrev-commit"     
+			                                               #check all the versions;
+			"Q"                                            #back from "git log";
+			"git reset --hard HEAD^"                       #back to the last version;
+			"git reset --hard HEAD^^"                      #back to the second last version;
+			"git reset --hard HEAD~100"                    #back to the version countdown to the first 100;			
+			"git relog"                                    #check all the command histories you modified,special for searching the version number;
+			"git seset --hard xxxxxxx"                     #'xxxxxxx' denotes the version number;
+			"cat <file.file type>"                         #see the content of 'file' in git bash;
+   4.2 delete rubbish and revoked
+            "rm <file.file type>"                          #delete the file from working space;
+			"git checkout -- <file.file type>"             #you just delete from working space in mistake, recover it from repository;
+			"git rm <file.file type>" & "git commit -m'xxx'"                           
+			                                               #delete file from repository throughly;
+			"git checkout -- <file.file type>"             #when just modify files in the working space, throw it and back;
+			"git reset HEAD <file.file type>" & "git checkout -- <file.file type>" ;              
+			                                               #when the file is just "git add" to stage, "Unstage" back to the working space;and then throw it and back;
+   4.3 branches
+            "git branch"                                   #check for all the branches;
+			"git brance <name>"                            #creat new branch;		
+			"git checkout <name>"                          #switch to the branch <name>;
+			"git checkout -b <name>"                       #creat and switch to the new branch <name>;
+			"git merge --no-ff -m'xxx' <name>"             #merge branches to current branch with records,if there're conflicts,solve it manually first and merge;
+			"git branch -d <name>"                         #delete the minor branch after merging with main branch;
+			"git branch -D <name>"                         #when haven't commit,fored to delete branch;
+			"BUG" branches                                 #back from 'working branch' to 'master';creat a 'bug branch';fix bug and merge bug branch with master and delete bug branch;back to "working branch";
+			"git stash"                                    #maintain the "working site";
+			"git stash pop"                                #back to "working site";
+			"FEATURE" branches                             #when adding a new 'feature',it was bad to disorder the main branch,so add a new 'feature branch' and merge it at last;
+   4.4 tag(switch to 'master' branch first)
+            "git tag v1.0"                                 #tag on the latest commit;
+			"git log --pretty=oneline --abbrev-commit" & "git tag v0.9 xxxxxxx"            
+			                                               #tag on the version No.xxxxxxx;     
+			"git tag"                                      #show all the tags;
+			"git show v1.0"                                #show the detail informations about v1.0;
+		    "git tag -a v1.2 -m'xxx' xxxxxxx"              #tag on the version No.xxxxxxx with instructions;
+			"git tag -d v1.0"                              #delete the tag only in local;
+			"git push origin v1.0"                         #push the tag v1.0 to the remote;
+			"git push origin --tags"                       #push all the tags to the remote;
+			"git tag -d v1.0" & "git push origin :refs/tags/v1.0"                          
+			                                               #delete tag v1.0 from the remote;
+   4.5 cooperate with parterners
+            "git remote"                                   #check informations about remote repository;
+			"git remote -v"                                #check detail informations about remote repository;
+			"git push origin master" or "git push origin dev"     
+			                                               #'master' and 'dev'(fix branch) branches need to be synchronized with GitHub,while others like 'bug' and 'feature' branches not;
+			"git branch"                                   #Your parterner can only see the 'master' after cloning,check it;
+			"git checkout -b dev origin/dev"               #connect and clone the 'dev' branch to the local(your parterner);
+			"git commit -m'xxx'" & "git push origin dev"   #fix the 'dev' and push it to the GitHub by your parterner;
+			"git branch --set-upsteam dev origin/dev" & "git pull" & "FIX THE CONFLICTS MANUALLY" & git commit -m'xxx'" & "git push origin dev";
+			                                               #When there're conflicts(concerns about conditions above);
+
+			
+			
+			
+			
+			

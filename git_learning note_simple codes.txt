@@ -1,0 +1,97 @@
+
+"cd d:/"                                       
+"mkdir <file_name,like learngit>"              
+"cd learngit"                                
+"pwd"                         #show the current directory;
+"git init"                    #initilize the new repository
+"git add <file.file type>                     
+"git commit -m'xxx'"                           
+"ls -ah"                                       
+"git remote origin git@github.com:Yi-Mu/learngit.git";
+"git push -u origin master"   #push the first time(warnings,normal);
+"git push origin master"                      
+"git remote rm origin"                        
+"git clone git@github.com:Yi-Mu/gitskills.git" 
+	
+"git config --global alias.st status"         
+"git config --global alias.ci commit"          
+"cat .git/config"             #check config file in repository£»
+"cat .gitconfig"              #remember in C:/Users/<username>;
+
+"git add .gitignore" & "git commit -m'xxx'"     
+"git check-ignore -v <file.file type>"         
+"git add -f <file.file type>" #Fored to add to the 'master';
+
+"git status"                                   
+"git diff"                                     
+"git log --graph --pretty=oneline --abbrev-commit"  
+"Q"                           #back from "git log";
+"git reset --hard HEAD^"                       
+"git reset --hard HEAD^^"                      
+"git reset --hard HEAD~100"                    	
+"git relog"                   #search the version number;
+"git seset --hard xxxxxxx"                     
+"cat <file.file type>"                         
+
+"rm <file.file type>"         #delete from working space;
+"git checkout -- <file.file type>"             
+                              #delete from working space in mistake
+							  #and recover it from repository;
+"git rm <file.file type>"&"git commit -m'xxx'" 
+                              #delete file from repository throughly;
+"git checkout -- <file.file type>"             
+                              #modify in working space, throw it and back;
+"git reset HEAD <file.file type>" & "git checkout -- <file.file type>" ;              
+                              #just "git add" to stage
+							  #"Unstage" back to the working space;
+						      #and then throw it and back;
+  
+"git branch"                                  
+"git brance <name>"           #creat new branch;		
+"git checkout <name>"         #switch to the branch <name>;
+"git checkout -b <name>"      #creat and switch to the new branch;
+"git merge --no-ff -m'xxx' <name>"             
+                              #merge branches to current branch
+							  #if conflicts,solve it manually first;
+"git branch -d <name>"        #delete minor branch after merging with main;
+"git branch -D <name>"        #when haven't commit,fored to delete branch;
+"BUG" branches                #back from 'working branch' to 'master';
+                              #creat a 'bug branch';fix bug and merge bug branch
+                              #with master and delete bug branch;
+							  #back to "working branch";
+"git stash"                   #maintain the "working site";
+"git stash pop"               #back to "working site";
+"FEATURE" branches                             
+
+"git tag v1.0"                #tag on the latest commit;
+"git log --pretty=oneline --abbrev-commit" & "git tag v0.9 xxxxxxx"            
+                              #tag on the version No.xxxxxxx;     
+"git tag"                     #show all the tags;
+"git show v1.0"               #show the detail informations about v1.0;
+"git tag -a v1.2 -m'xxx' xxxxxxx"              
+                              #tag on the version No.xxxxxxx with instructions;
+"git tag -d v1.0"             #delete the tag only in local;
+"git push origin v1.0"        #push the tag v1.0 to the remote;
+"git push origin --tags"      #push all the tags to the remote;
+"git tag -d v1.0" & "git push origin :refs/tags/v1.0"                          
+                              #delete tag v1.0 from the remote;
+
+"git remote"                  #check informations about remote repository;
+"git remote -v"               #check detail informations about remote repository;
+"git push origin master" or "git push origin dev"     
+                              #'master' and 'dev'(fix) branches need to be synchronized
+                              #with GitHub,while others like 'bug' and 'feature' not;
+"git branch"                  #parterner can only see 'master' after cloning,check it;
+"git checkout -b dev origin/dev"               
+                              #connect and clone 'dev' branch to local(your parterner);
+"git commit -m'xxx'" & "git push origin dev"   
+                              #fix 'dev' and push it to the GitHub by your parterner;
+"git branch --set-upsteam dev origin/dev" & "git pull" & "FIX THE CONFLICTS MANUALLY" & 
+"git commit -m'xxx'" & "git push origin dev";
+                              #When there're conflicts(concerns about conditions above).
+
+			
+			
+			
+			
+			
