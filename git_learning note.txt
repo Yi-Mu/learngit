@@ -55,7 +55,7 @@
 			"git reset --hard HEAD^"                       #back to the last version;
 			"git reset --hard HEAD^^"                      #back to the second last version;
 			"git reset --hard HEAD~100"                    #back to the version countdown to the first 100;			
-			"git relog"                                    #check all the command histories you modified,special for searching the version number;
+			"git reflog"                                   #check all the command histories you modified,special for searching the version number;
 			"git seset --hard xxxxxxx"                     #'xxxxxxx' denotes the version number;
 			"cat <file.file type>"                         #see the content of 'file' in git bash;
    4.2 delete rubbish and revoked
