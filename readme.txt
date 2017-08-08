@@ -12,4 +12,5 @@ This is the first time for me to opperate it independedly.
 
 Have a try on cooperating with github.
 
-But now do you get it?
+AND now I understand. But now do you get it? 
+
