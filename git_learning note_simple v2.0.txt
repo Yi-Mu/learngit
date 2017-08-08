@@ -1,0 +1,46 @@
+
+
+"git init"              
+"git push origin master"                      
+"git config --global alias.st status"         
+"cat .gitconfig"   #remember in C:/Users/<username>;
+"git status"
+"Q"                           
+"git reset --hard HEAD^"                       
+"git checkout -- <file.file type>"  #Throw;
+"git rm <file.file type>"&"git commit -m'xxx'" 
+                #Delete from repository throughly;
+"git reset HEAD <file.file type>" & "git checkout -- <file.file type>" ;              
+                #Unstage, throw;
+"git branch"                                  
+"git checkout <name>"       #switch;
+"git checkout -b <name>"    #creat and switch;
+"git merge --no-ff -m'xxx' <name>"             
+                #merge branches to current branch;
+			    #if conflicts,solve it manually first;
+"git branch -d <name>"        
+"BUG" branches   #back from 'working branch' to 'master';
+                 #creat a 'bug branch';fix bug and merge bug branch
+                 #with master and delete bug branch;
+				 #back to "working branch";
+"git stash"       #maintain the "working site";
+"git stash pop"   #back to "working site";                       
+"git tag v1.0"   #tag on the latest commit;
+"git tag"        #show all the tags;
+"git tag -d v1.0"    #delete the tag only in local;
+"git push origin v1.0"  #push the tag v1.0 to the remote;
+"git tag -d v1.0" & "git push origin :refs/tags/v1.0"                          
+                 #delete tag v1.0 from the remote;
+"git remote -v"  #detail informations about remote repository;
+"git checkout -b dev origin/dev"               
+                 #connect and clone 'dev' branch to local(parterner);
+"git branch --set-upsteam dev origin/dev" & 
+"git pull" & "FIX THE CONFLICTS MANUALLY" & 
+"git commit -m'xxx'" & "git push origin dev";
+                 #When there're conflicts.
+
+			
+			
+			
+			
+			
