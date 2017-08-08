@@ -24,7 +24,8 @@
 			"ls -ah"                                       #show all the files in current directory including hidden ones;
 	  c.connect a remote repository
 	        "git remote add <remote_name> git@github.com:<GitHub_name>/<remote repository_name>.git";
-			        such as "git remote origin git@github.com:Yi-Mu/learngit.git";
+			        such as "git remote add origin git@github.com:Yi-Mu/learngit.git";
+					                                       #creat a remote repository with the same name in GitHub before enter the codes;
 			"git push -u origin master"                    #push messages from local main branch "master" to remote "origin" in the first time(there're may be warnings,normal);
 			"git push origin master"                       #when reversing the files in local repository,push the newest version to remote;
 			"git remote rm origin"                         #delete the connections between local and remote "origin";

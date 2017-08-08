@@ -7,7 +7,7 @@
 "git add <file.file type>                     
 "git commit -m'xxx'"                           
 "ls -ah"                                       
-"git remote origin git@github.com:Yi-Mu/learngit.git";
+"git remote add origin git@github.com:Yi-Mu/learngit.git";
 "git push -u origin master"   #push the first time(warnings,normal);
 "git push origin master"                      
 "git remote rm origin"                        
